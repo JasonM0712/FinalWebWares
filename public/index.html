@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+
+
+    
+<!-- Importation du fichier js VanillaTilt depuis source CDN (Content Delivery Network). Un CDN = utilisé pour distribuer des fichiers de manière efficace et rapide à travers le réseau. Le "integrity" = mesure de sécu pour s'assurer que fichier n'est pas altéré. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js" integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Ici, écoute évènement DOMContentLoader, qui est déclenché lorsque le doc HTML a été complètement chargé et analysé. La fonction anonyme à l'intérieur sera exécutée lorsque cet événement se produira. = ap que donc a été complètement chargé.
+Le VanillaTilt... initalise l'effet de Tilt CAD l'inclinaison sur l'élément du DOM avec la classe CSS .card
+max: 25 = valeur max de inclinaison
+speed: 400 = vitesse de effet du tilt (inclinaison)
+glare: true = active effet de glare (reflet) lors du tilt
+-->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+VanillaTilt.init(document.querySelector(".card"), {
+  max: 15,
+  speed: 400,
+  glare: true,
+}),
+VanillaTilt.init(document.querySelector(".cardL"), {
+  // max: 15,
+  // speed: 400,
+  // glare: true,
+}),
+VanillaTilt.init(document.querySelector(".cardC"), {
+  // max: 15,
+  // speed: 400,
+  // glare: true,
+}),
+VanillaTilt.init(document.querySelector(".cardR"), {
+  // max: 15,
+  // speed: 400,
+  // glare: true,
+});
+});
+
+</script>
+
+
+  </body>
+</html>
